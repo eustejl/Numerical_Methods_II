@@ -14,7 +14,7 @@ import pylab as pl  # useful to plot stuff!
 # number of points we will draw
 NN = 1000
 # minimum set we consider for our analysis
-n_min = 100
+n_min = 480
 # NN rows of data, with two values each, x and y
 data = np.random.rand(NN,2)
 
@@ -65,9 +65,9 @@ pl.title('Standard deviations')
 xspace = np.linspace(NN/100., NN, NN)
 #pl.loglog(1./np.sqrt(xspace),'bd', label='Reference line')
 
-pl.loglog(Sigma,'r-', label='Stand. Dev.')
-pl.loglog(1./np.sqrt(xspace),'bd', label='Square root scaling')
-pl.loglog(1./(xspace),'g.', label='Linear scaling')
+pl.semilogy(Sigma,'r-', label='Stand. Dev.')
+pl.semilogy(1./np.sqrt(xspace),'bd', label='Square root scaling')
+pl.semilogy(1./(xspace),'g.', label='Linear scaling')
 
 pl.xlabel('step')
 pl.ylabel('$\sigma$')
